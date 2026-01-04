@@ -8,7 +8,11 @@ import passport from "./middleware/passport.config.js";
 import session from "express-session";
 
 
+if(process.env.isRailway=="True"){
+const { default: populateDb } = await import("./db/populateDb.js");
 
+await populateDb();
+}
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
