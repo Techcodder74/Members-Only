@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const populateDb = async () => {
+const populateDb = async (t=false) => {
   const { default: pool } = await import("./pool.js");
   const { default: seedData } = await import("./data/data.js");
 
@@ -50,7 +50,7 @@ const populateDb = async () => {
     console.error("Population failed:", err.message);
   } finally {
     client.release();
-    await pool.end();
+   if(!t) await pool.end();
   }
 };
 

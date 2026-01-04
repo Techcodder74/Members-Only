@@ -11,7 +11,7 @@ import session from "express-session";
 if(process.env.isRailway=="True"){
 const { default: populateDb } = await import("./db/populateDb.js");
 
-await populateDb();
+await populateDb(true);
 }
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
