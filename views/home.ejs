@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+<h1>Welcome to Odin Club</h1>
+<div class="header">
+ <% if (user && !isMember) { %>
+    <a href="/joinClub"><button>Join Club</button></a>
+    <a href="/newMessage"><button>Create New Message</button></a>
+    <a href="/logout"><button>Log out</button></a>
+ <% } else if (!user) { %>
+   <a href="/signup"><button>Sign Up</button></a>
+   <a href="/login"><button>Login</button></a>
+   <% } else { %>
+       <h2>Welcome to the Special Club</h2>
+       <a href="/newMessage"><button>Create New Message</button></a>
+       <a href="/logout"><button>Log out</button></a>
+   <% } %>
+</div>
+<div class="msgGrid">
+<% messages.forEach(msg=>{ %>
+<%- include('utils/msgCard', {msg}); %>
+<% }); %>
+</div>
+
+
+</body>
+
+</html>

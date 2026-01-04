@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Club</title>
+    <link rel="stylesheet" href="/css/joinClub.css">
+</head>
+
+<body>
+
+    <% if (locals.message) { %>
+        <div class="info-msg"><%= locals.message %></div>
+    <% } %>
+
+    <form method="post" action="/joinClub" class="join-form">
+        <h2 class="form-title">Enter the Secret Passcode</h2>
+
+        <p class="form-subtitle">
+            Enter the secret password to join the Club
+        </p>
+
+        <div class="form-group">
+            <label for="passcode">Passcode</label>
+            <input type="password" name="passcode" id="passcode" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Join the Club</button>
+    </form>
+
+</body>
+</html>

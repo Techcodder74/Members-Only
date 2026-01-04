@@ -1,0 +1,13 @@
+<div class="msgcard">
+    <h3 class="msgTitle">
+        <%= msg.title %>
+    </h3>
+    <div class="msgcontent">
+        <div class="msg">
+            <%=msg.content%>
+        </div>
+    </div>
+    <div class="createdby"><spam class="created">Created By:</spam>  <%= isMember?msg.author : "Anonymous" %>
+    </div>
+
+</div>
